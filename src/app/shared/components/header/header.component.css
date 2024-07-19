@@ -1,0 +1,54 @@
+.hidden {
+    display: none;
+  }
+  
+  .navbar-brand.custom-bg {
+      background-color: #007bff; /* Blue background color */
+      color: white; /* White text color */
+      padding: 10px 15px; /* Optional: Padding for better appearance */
+      border-radius: 5px; /* Optional: Rounded corners for the background */
+    }
+  
+  
+    .custom-bg {
+      background-color: #007bff; /* Blue background color */
+      color: white; /* White text color */
+      padding: 10px 15px; /* Optional: Padding for better appearance */
+      border-radius: 5px; /* Optional: Rounded corners for the background */
+    }
+  
+    /* Stili per la modalità notturna */
+  
+  .night-mode .navbar {
+    background-color: #343a40; /* Colore di sfondo principale in modalità notturna */
+  }
+  
+  .night-mode .navbar-brand.custom-bg {
+    background-color: #1c1c1c; /* Colore di sfondo più scuro per il marchio */
+    color: #ffffff; /* Testo bianco per il marchio */
+  }
+  
+  .night-mode .navbar-toggler-icon,
+  .night-mode .bi-moon,
+  .night-mode .bi-bell,
+  .night-mode .bi-three-dots-vertical {
+    color: #ffffff; /* Testo bianco per le icone */
+  }
+  
+  .night-mode .nav-link {
+    color: #ffffff !important; /* Testo bianco per i link */
+  }
+  
+  .night-mode .dropdown-menu {
+    background-color: #1c1c1c; /* Colore di sfondo più scuro per il menu a discesa */
+    border: 1px solid #343a40; /* Cambia il colore del bordo */
+  }
+  
+  .night-mode .dropdown-item {
+    color: #ffffff; /* Testo bianco per gli elementi del menu a discesa */
+  }
+  
+  .night-mode .dropdown-divider {
+    border-color: #343a40; /* Cambia il colore del divisore nel menu a discesa */
+  }
+  

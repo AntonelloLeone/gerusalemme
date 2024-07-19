@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Prima colonna -->
+      <div class="col-auto custom-padding-none d-flex flex-column ">
+        <div
+          class="navbar-brand bg-gray-100 d-flex align-items-center custom-small-text"
+          [ngClass]="{ 'night-mode': isNightMode }"
+        >
+          Sapienza Agia Polis Project SAPP
+        </div>
+        <div class="app-sidebar-wrapper">
+          <app-sidebar (tableSelected)="onTableSelected($event)"></app-sidebar>
+        </div>
+      </div>
+  
+      <!-- Seconda colonna -->
+      <div class="col-md-9 custom-padding-none d-flex flex-column flex-fill">
+        <app-header></app-header>
+        <!-- component mostraTable -->
+        <div class="mostra-table-container">
+          <router-outlet name="secondColumn"></router-outlet>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,30 @@
+<div *ngIf="tableData.length > 0">
+    <div class="d-flex align-items-center justify-content-between">
+      <h3>SAPP > {{ tableName }}</h3>
+      <button class="btn btn-primary" (click)="addRecord()">
+        <i class="bi bi-plus"></i> Add
+      </button>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th *ngFor="let key of tableHeaders">{{ key }}</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData; let i = index" [ngClass]="{'table-row-odd': i % 2 === 0, 'table-row-even': i % 2 !== 0}">
+          <td *ngFor="let key of tableHeaders">{{ item[key] }}</td>
+          <td>
+            <i class="bi bi-eye action-icon" (click)="viewRecord(item)" style="color: blue;"></i>
+            <i class="bi bi-pencil action-icon" (click)="editRecord(item)" style="color: green;"></i>
+            <i class="bi bi-trash action-icon" (click)="deleteRecord(item)" style="color: red;"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="tableData.length === 0">
+    <p>Nessun dato disponibile.</p>
+  </div>
+  
