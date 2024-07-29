@@ -7,6 +7,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class DatabaseService {
+  private baseApiUrl = environment.apiUrl;
   private apiUrl = environment.apiUrl + 'TablesControllercs/tables';
   private apiTable = environment.apiUrl;
 
@@ -19,4 +20,23 @@ export class DatabaseService {
   getTableData(tabella: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiTable}${tabella}`);
   }
+
+  genericDelete(id:number , tableName: string | null): Observable<void>{
+    let realTableName = '';
+    if(tableName != null){
+      realTableName = this.transformTableName(tableName);
+    }
+   
+    const url = `${this.baseApiUrl}${realTableName}/${id}`;
+    console.log(url);
+    return this.http.delete<void>(url);
+  }
+
+  private transformTableName(tableName: string): string {
+    return tableName
+      .replace(/_/g, ' ') 
+      .replace(/\b\w/g, char => char.toUpperCase()) 
+      .replace(/ /g, ''); 
+  }
+
 }

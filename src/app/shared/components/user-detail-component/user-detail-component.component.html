@@ -1,0 +1,32 @@
+<p>user-detail-component works!</p>
+<div class="container mt-4">
+    <div *ngIf="user; else loading" class="card">
+      <div class="card-header">
+        <h2 class="card-title">User Details</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>ID:</strong> {{ user.id }}</p>
+            <p><strong>First Name:</strong> {{ user.firstname }}</p>
+            <p><strong>Last Name:</strong> {{ user.lastname }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Password Digest:</strong> {{ user.passwordDigest }}</p>
+            <p><strong>Recovery Password Digest:</strong> {{ user.recoveryPasswordDigest }}</p>
+            <p><strong>Role:</strong> {{ user.role }}</p>
+            <p><strong>Active:</strong> {{ user.active ? 'Yes' : 'No' }}</p>
+            <p><strong>Created At:</strong> {{ user.createdAt | date:'medium' }}</p>
+            <p><strong>Updated At:</strong> {{ user.updatedAt | date:'medium' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #loading>
+      <div class="alert alert-info">
+        <p>Loading...</p>
+      </div>
+    </ng-template>
+  </div>
+  

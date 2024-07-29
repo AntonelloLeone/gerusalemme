@@ -1,0 +1,56 @@
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table thead {
+    background-color: #343a40; /* Colore di sfondo dell'intestazione */
+    color: #ffffff; /* Colore del testo dell'intestazione */
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Colore di sfondo per righe dispari */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Colore di sfondo per righe pari */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1; /* Colore di sfondo al passaggio del mouse */
+  }
+  
+  .table th {
+    border-bottom: 2px solid #dee2e6; /* Bordo inferiore delle intestazioni */
+  }
+  
+  .table td {
+    border-bottom: 1px solid #dee2e6; /* Bordo inferiore delle celle */
+  }
+  
+  .table td:last-child {
+    border-right: none; /* Rimuove il bordo destro dall'ultima colonna */
+  }
+  
+  .table th:last-child, .table td:last-child {
+    border-right: none; /* Rimuove il bordo destro dall'ultima colonna */
+  }
+  
+  .table .action-icon {
+    margin: 0 8px; /* Spazio tra le icone */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+  }
+  
+  .table .action-icon:hover {
+    opacity: 0.8; /* Cambia l'opacità al passaggio del mouse per un effetto visivo */
+  }
+  

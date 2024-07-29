@@ -34,7 +34,9 @@ export class MostraTableComponent implements OnInit {
   }
 
   private async fetchTableData(tableName: string): Promise<void> {
-    this.databaseService.getTableData(tableName).subscribe({
+    const modifiedTableName = tableName.replace(/_/g, '');
+
+    this.databaseService.getTableData(modifiedTableName).subscribe({
       next: data => {
         this.tableData = data;
         if (this.tableData.length > 0) {
@@ -51,21 +53,53 @@ export class MostraTableComponent implements OnInit {
     console.log('View record');
     if (this.tableName) {
       this.router.navigate(
-        [{ outlets: { secondColumn: ['add', this.tableName] } }],
+        [{ outlets: { secondColumn: ['details', this.tableName+'_add',1] } }],
         { relativeTo: this.route.parent }
       );
     }
   }
 
-  viewRecord(record: any): void {
-    console.log('View record', record);
+  viewRecord(idValue: any): void {
+    
+    console.log('View record', idValue);
+    console.log(this.tableName);
+    this.router.navigate([{ outlets: { secondColumn: ['details', this.tableName, idValue] } }]
+      ,
+        { relativeTo: this.route.parent }
+    );
+    // this.router.navigate(
+    //   [{ outlets: { secondColumn: [`details/${this.tableName}/${idValue}`] } }]
+    // );
   }
 
-  editRecord(record: any): void {
-    console.log('Edit record', record);
+  editRecord(idValue: any): void {
+    console.log('Edit record', idValue);
+    this.router.navigate([{ outlets: { secondColumn: ['details', this.tableName+'_update', idValue] } }]
+      ,
+        { relativeTo: this.route.parent }
+    );
   }
 
-  deleteRecord(record: any): void {
-    console.log('Delete record', record);
+  deleteRecord(idValue: any): void {
+    console.log('Delete record', idValue);
+    
+    // Finestra di conferma nativa del browser
+    if (window.confirm('Sei sicuro di voler eliminare questo record?')) {
+      if (this.tableName) {
+        this.databaseService.genericDelete(idValue, this.tableName).subscribe({
+          next: () => {
+            console.log('Record deleted successfully');
+            // Rinfresca i dati
+            if (this.tableName) {
+              this.fetchTableData(this.tableName);
+            }
+          },
+          error: (error) => {
+            console.error('Error deleting record:', error);
+          }
+        });
+      }
+    }
   }
+  
 }

@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './shared/components/main/main.component';
 import { MostraTableComponent } from './shared/components/showTable/showtable.component';
 import { NgModule } from '@angular/core';
+import { UserDetailComponent } from './shared/components/user-detail-component/user-detail-component.component';
+import { DynamicComponentLoaderComponent } from './shared/components/dynamic-component-loader/dynamic-component-loader.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,6 +28,11 @@ export const routes: Routes = [
         {
           path: 'table/:tableName',
           component: MostraTableComponent,
+          outlet: 'secondColumn'
+        },
+        {
+          path: 'details/:componentName/:id',
+          component: DynamicComponentLoaderComponent,
           outlet: 'secondColumn'
         }
       ]

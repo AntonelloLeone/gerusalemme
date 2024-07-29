@@ -28,11 +28,12 @@ export class LoginComponent {
 
   onSubmit(): void {
     const loginRequest: LoginReq = this.form.getRawValue();
-    console.log(loginRequest);
+    console.log(loginRequest);  // Rimuovi in produzione
     this.http.post<LoginRes>(`${environment.apiUrl}Auth/login`, loginRequest)
     .subscribe((response) => {
       console.log('response', response); // Rimuovi in produzione
       localStorage.setItem('token', response.token);
+      localStorage.setItem('utente', JSON.stringify(response));
       this.authService.setCurrentUser(response);
       this.router.navigateByUrl('/main');
     }, (error) => {

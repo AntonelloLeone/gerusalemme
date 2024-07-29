@@ -1,7 +1,8 @@
 <div class="vertical-navbar">
     <ul class="nav flex-column">
         <li class="nav-item" *ngFor="let tableName of tableNames">
-            <a class="nav-link" (click)="showTable(tableName)">{{ tableName }}</a>
+            <a class="nav-link nav-item-link" (click)="showTable(tableName)">{{ formatTableName(tableName) }}</a>
+            <!-- <a [routerLink]="['/view', table.name]">{{ table.name }}</a> -->
         </li>
     </ul>
 </div>
