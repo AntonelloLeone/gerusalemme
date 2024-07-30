@@ -1,68 +1,81 @@
+/* Rimuove il padding sinistro e destro */
 .custom-padding-none {
   padding-left: 0;
   padding-right: 0;
 }
 
+/* Imposta una dimensione del font più piccola e forza il testo a spezzarsi su più righe */
 .custom-small-text {
   font-size: 14px;
   word-wrap: break-word; /* Forza il testo a spezzarsi su più righe se necessario */
 }
 
+/* Stile per la barra di navigazione verticale */
 .vertical-navbar {
-  background-color: #193047;
-  /* border: 1px solid #dee2e6; */
-  border-radius: 0px;
-  margin: 0;
+  background-color: #193047; /* Colore di sfondo */
+  border-radius: 0px; /* Rimuove il bordo arrotondato */
+  margin: 0; /* Rimuove i margini */
   padding: 0; /* Rimuove il padding interno */
-  align-items: stretch; /* Altezza uguale a quella della colonna */
+  height: 100vh; /* Altezza dell'elemento per l'intera altezza della finestra */
+  overflow-y: auto; /* Abilita lo scroll verticale se il contenuto è troppo lungo */
 }
+
+/* Stile per la modalità notte */
 .night-mode .vertical-navbar {
-  background-color: #e90909; /* Colore di sfondo ancora più scuro */
-  border-color: #343a40; /* Cambia il colore del bordo */
+  background-color: #e90909; /* Colore di sfondo per la modalità notte */
+  border-color: #343a40; /* Colore del bordo per la modalità notte */
 }
+
+/* Rimuove margini e padding dalla lista di navigazione */
 .vertical-navbar .nav {
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style-type: none; /* Rimuove i punti elenco */
 }
 
+/* Stile per i link di navigazione */
 .vertical-navbar .nav-link {
-  color: #ffffff;
-  padding: 8px 16px;
-  display: block;
-  text-decoration: none;
+  color: #ffffff; /* Colore del testo */
+  padding: 8px 16px; /* Padding interno */
+  display: block; /* Assicura che il link occupi tutta la larghezza disponibile */
+  text-decoration: none; /* Rimuove la sottolineatura */
 }
 
+/* Stile per il link di navigazione attivo */
 .vertical-navbar .nav-link.active {
-  font-weight: bold;
+  font-weight: bold; /* Rende il testo in grassetto */
 }
 
+/* Stile per il brand della navbar */
 .navbar-brand.bg-gray-100 {
-  background-color: #132537;
-  color: #ffffff;
-  border: 0px solid #dee2e6;
-  border-radius: 0px;
-
-  margin: 0;
-  padding: 16px;
+  background-color: #132537; /* Colore di sfondo */
+  color: #ffffff; /* Colore del testo */
+  border: 0px solid #dee2e6; /* Rimuove il bordo */
+  border-radius: 0px; /* Rimuove il bordo arrotondato */
+  margin: 0; /* Rimuove i margini */
+  padding: 16px; /* Padding interno */
 }
 
+/* Stile per elementi flessibili con altezza al 100% */
 .d-flex.align-items-center {
-  height: 100%;
+  height: 100%; /* Altezza al 100% dell'elemento contenitore */
 }
 
+/* Altezza personalizzata per il titolo */
 .custom-title {
-  height: 500px;
+  height: 500px; /* Altezza fissa per il titolo */
 }
 
+/* Stile per i link di navigazione come pulsanti */
 .nav-item-link {
-  cursor: pointer;
+  cursor: pointer; /* Cambia il cursore su hover */
 }
 
+/* Stile per il link di navigazione al passaggio del mouse */
 .nav-item-link:hover {
-  color: blue !important;
-  background-color: white;
-  border-radius: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  color: blue !important; /* Colore del testo al passaggio del mouse */
+  background-color: white; /* Colore di sfondo al passaggio del mouse */
+  border-radius: 5px; /* Angoli arrotondati */
+  margin-left: 5px; /* Margine sinistro */
+  margin-right: 5px; /* Margine destro */
 }

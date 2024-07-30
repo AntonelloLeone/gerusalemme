@@ -1,10 +1,12 @@
 <div *ngIf="tableData.length > 0">
-    <div class="d-flex align-items-center justify-content-between">
+  <hr>
+    <div class="d-flex align-items-center justify-content-between bordo-up">
       <h3>SAPP > {{ tableName }}</h3>
       <button class="btn btn-primary" (click)="addRecord()">
         <i class="bi bi-plus"></i> Add
       </button>
     </div>
+    <hr class="hr2">
     <table class="table table-bordered">
       <thead>
         <tr>

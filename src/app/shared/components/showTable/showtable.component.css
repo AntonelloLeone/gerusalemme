@@ -5,6 +5,9 @@
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+   
   }
   
   .table th, .table td {
@@ -54,3 +57,26 @@
     opacity: 0.8; /* Cambia l'opacità al passaggio del mouse per un effetto visivo */
   }
   
+  .bordo-up{
+   margin-top:  10px;
+  margin-bottom: 10px; /* Aggiunge uno spazio inferiore di 20px */
+  margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  hr {
+    margin: 0; /* Rimuove i margini superiore e inferiore */
+    padding: 0; /* Rimuove il padding, se presente */
+    border: none; /* Rimuove eventuali bordi di default, opzionale */
+    background-color: #343a40; /* Colore di sfondo se vuoi un colore specifico */
+    height: 1px; /* Altezza dell'hr */
+  }
+
+  .hr2 {
+    
+    
+    border: none; /* Rimuove eventuali bordi di default, opzionale */
+    background-color: #343a40; /* Colore di sfondo se vuoi un colore specifico */
+    height: 1px; /* Altezza dell'hr */
+    margin-bottom: 15px;
+  }
